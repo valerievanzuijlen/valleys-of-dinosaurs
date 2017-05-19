@@ -46,7 +46,7 @@ class DinosaursController < ApplicationController
   private
 
   def dinosaur_params
-    params.require(:dinosaur).permit(:name, :age, :image_url)
+    params.require(:dinosaur).permit(:name, :age, :image_url, :valley_id)
 
     if @dinosaur.update_attributes(dinosaur_params)
       redirect_to @dinosaur
