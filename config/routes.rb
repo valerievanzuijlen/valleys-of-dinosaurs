@@ -1,5 +1,14 @@
-Rails.application.routes.draw do
-  root "dinosaurs#index"
+# config/routes.rb
 
-  get "dinosaurs" => "dinosaurs#index"
+Rails.application.routes.draw do
+  root 'dinosaurs#index'
+
+  get 'dinosaurs' => 'dinosaurs#index'
+  get 'dinosaurs/new' => "dinosaurs#new", as: :new_dinosaur
+  get 'dinosaurs/:id' => 'dinosaurs#show', as: :dinosaur
+  post "dinosaurs" => "dinosaurs#create"
+  get 'dinosaurs/:id/edit' => 'dinosaurs#edit', as: :edit_dinosaur
+patch"dinosaurs/:id" => "dinosaurs#update"
+
+
 end
